@@ -186,7 +186,7 @@ async function loadDynamicContent() {
                     <img src="${prod.image_url || 'https://via.placeholder.com/60'}" alt="${prod.title}" class="product-img">
                     <div class="product-details">
                         <div class="product-title">${prod.title}</div>
-                        <div class="product-price">${prod.price || 'Trendyol\'da Keşfet'}</div>
+                        <div class="product-price">${prod.price || 'Amazon\'da İncele'}</div>
                     </div>
                     <i class="fa-solid fa-arrow-right product-arrow"></i>
                 `;
@@ -208,13 +208,13 @@ function renderFallbackProducts() {
             title: "Minimalist Felt Desk Mat (Keçe Sümen)",
             price: "249 TL",
             image_url: "https://images.unsplash.com/photo-1616401784845-180882ba9ba8?w=150",
-            affiliate_link: "https://www.trendyol.com/sr?q=minimalist+kece+sumen"
+            affiliate_link: "https://www.amazon.com.tr/s?k=minimalist+kece+sumen&tag=aurafocus-21"
         },
         {
             title: "Mekanik Klavye - Gateron Brown Switch",
             price: "1.499 TL",
             image_url: "https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=150",
-            affiliate_link: "https://www.trendyol.com/sr?q=mekanik+klavye+gateron"
+            affiliate_link: "https://www.amazon.com.tr/s?k=mekanik+klavye+gateron&tag=aurafocus-21"
         }
     ];
     productList.innerHTML = '';

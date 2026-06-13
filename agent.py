@@ -87,7 +87,7 @@ def run_agent():
          - Keyboard: "https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=150"
          - Notebook: "https://images.unsplash.com/photo-1531346878377-a5be20888e57?w=150"
          - Desk light: "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=150"
-       - affiliate_link: Trendyol search query target for this item, e.g., "https://www.trendyol.com/sr?q=felt+desk+pad" (evergreen target).
+       - affiliate_link: Amazon.com.tr search query link for this item with the tracking ID 'aurafocus-21', e.g., "https://www.amazon.com.tr/s?k=kece+sumen&tag=aurafocus-21" (use URL-encoded terms, e.g. replacing spaces with +).
     
     SEARCH TRENDS:
     {search_results}
@@ -103,7 +103,7 @@ def run_agent():
           "title": "Accessory title",
           "price": "Price in TL",
           "image_url": "Unsplash URL",
-          "affiliate_link": "Trendyol search link"
+          "affiliate_link": "Amazon search link with tag=aurafocus-21"
         }},
         ...
       ]
