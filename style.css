@@ -76,10 +76,11 @@ header {
 }
 
 .logo {
-    font-family: var(--font-sans);
-    font-weight: 700;
-    font-size: 2rem;
-    letter-spacing: 6px;
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-weight: 600;
+    font-size: 2.4rem;
+    letter-spacing: 2px;
     margin-bottom: 8px;
     color: var(--text-primary);
 }
@@ -90,8 +91,8 @@ header {
 }
 
 .tagline {
-    font-size: 0.9rem;
-    letter-spacing: 2px;
+    font-size: 0.85rem;
+    letter-spacing: 3px;
     color: var(--text-secondary);
     text-transform: uppercase;
     font-weight: 400;
@@ -114,17 +115,16 @@ header {
     background: var(--card-bg);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    border: 1px solid var(--border-color);
+    border: 1px solid rgba(255, 255, 255, 0.04);
     border-radius: var(--radius-lg);
-    padding: 30px;
+    padding: 35px;
     margin-bottom: 30px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
     transition: var(--transition);
 }
 
 .glass-card:hover {
-    border-color: rgba(212, 175, 55, 0.3);
-    box-shadow: 0 15px 40px rgba(212, 175, 55, 0.05);
+    border-color: var(--border-color);
 }
 
 .section-title {
@@ -463,18 +463,16 @@ header {
     display: flex;
     align-items: center;
     gap: 15px;
-    padding: 12px;
-    background: rgba(255, 255, 255, 0.01);
-    border: 1px solid rgba(255, 255, 255, 0.03);
-    border-radius: var(--radius-md);
+    padding: 16px 0;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
     text-decoration: none;
     transition: var(--transition);
 }
 
 .product-item:hover {
-    background: rgba(212, 175, 55, 0.03);
-    border-color: rgba(212, 175, 55, 0.2);
-    transform: translateX(4px);
+    border-bottom-color: rgba(212, 175, 55, 0.25);
 }
 
 .product-img {
