@@ -1,13 +1,13 @@
 /* ─── BASE STYLES & VARIABLES (Premium FT-Inspired Light Theme) ────────── */
 :root {
-    --bg-primary: #fdfbf7;      /* Warm cream paper background */
-    --card-bg: #ffffff;         /* Pure white cards */
-    --border-color: #eae7e1;    /* Subtle warm border */
-    --text-primary: #1c1d21;     /* Charcoal/dark graphite text */
-    --text-secondary: #5c5e66;   /* Muted graphite text */
-    --accent-gold: #9e7d28;      /* Deep bronze gold */
-    --accent-gold-hover: #b8901c;/* Lighter gold on hover */
-    --accent-silver: #8c8e94;
+    --bg-primary: #151411;      /* Warm dark espresso background */
+    --card-bg: #1e1c18;         /* Lighter warm dark cards */
+    --border-color: #2e2a23;    /* Subtle warm bronze border */
+    --text-primary: #e6e1d6;     /* Soft warm cream text */
+    --text-secondary: #a8a296;   /* Muted warm cream text */
+    --accent-gold: #c5a059;      /* Warm bronze gold */
+    --accent-gold-hover: #dfb86e;/* Lighter gold on hover */
+    --accent-silver: #7e796f;
     --radius-lg: 16px;
     --radius-md: 8px;
     --font-sans: 'Inter', sans-serif;
@@ -35,33 +35,24 @@ body {
 
 /* ─── HEADER ─────────────────────────────────────────────────────────────── */
 header {
-    padding: 40px 20px 20px;
+    padding: 15px 20px;
     text-align: center;
     border-bottom: 1px solid var(--border-color);
-    background: #fcfaf5;
+    background: #1a1915;
 }
 
 .logo {
     font-family: var(--font-serif);
     font-style: italic;
     font-weight: 600;
-    font-size: 2.4rem;
+    font-size: 1.6rem;
     letter-spacing: 2px;
-    margin-bottom: 8px;
     color: var(--text-primary);
 }
 
 .logo .accent {
     color: var(--accent-gold);
     font-weight: 400;
-}
-
-.tagline {
-    font-size: 0.8rem;
-    letter-spacing: 4px;
-    color: var(--text-secondary);
-    text-transform: uppercase;
-    font-weight: 500;
 }
 
 /* ─── CONTAINER LAYOUT ───────────────────────────────────────────────────── */
@@ -118,7 +109,7 @@ header {
     justify-content: center;
     gap: 10px;
     margin-bottom: 30px;
-    background: #faf8f5;
+    background: #26241f;
     border: 1px solid var(--border-color);
     padding: 6px;
     border-radius: 30px;
@@ -206,7 +197,7 @@ header {
     display: grid;
     grid-template-columns: 1.2fr 2fr;
     align-items: center;
-    background: #faf8f5;
+    background: #24221d;
     padding: 15px 20px;
     border-radius: var(--radius-md);
     border: 1px solid var(--border-color);
@@ -214,9 +205,9 @@ header {
 }
 
 .sound-item:hover, .sound-item.active {
-    background: #ffffff;
+    background: #2d2b24;
     border-color: var(--accent-gold);
-    box-shadow: 0 4px 15px rgba(158, 125, 40, 0.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.20);
 }
 
 .sound-info {
@@ -240,7 +231,7 @@ header {
     -webkit-appearance: none;
     width: 100%;
     height: 4px;
-    background: #eae7e1;
+    background: #3d3930;
     outline: none;
     border-radius: 2px;
     transition: var(--transition);
@@ -323,7 +314,7 @@ header {
 
 #todo-input {
     flex-grow: 1;
-    background: #faf8f5;
+    background: #24221d;
     border: 1px solid var(--border-color);
     color: var(--text-primary);
     padding: 12px 16px;
@@ -335,7 +326,7 @@ header {
 
 #todo-input:focus {
     border-color: var(--accent-gold);
-    background: #ffffff;
+    background: #2d2b24;
 }
 
 #add-todo-btn {
@@ -372,14 +363,14 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 12px 16px;
-    background: #faf8f5;
+    background: #24221d;
     border: 1px solid var(--border-color);
     border-radius: var(--radius-md);
     transition: var(--transition);
 }
 
 .todo-item:hover {
-    background: #ffffff;
+    background: #2d2b24;
     border-color: var(--accent-gold);
 }
 
@@ -400,7 +391,7 @@ header {
 .delete-todo-btn {
     background: transparent;
     border: none;
-    color: rgba(28, 29, 33, 0.3);
+    color: rgba(230, 225, 214, 0.3);
     cursor: pointer;
     transition: var(--transition);
 }
@@ -431,7 +422,7 @@ header {
     padding: 16px 0;
     background: transparent;
     border: none;
-    border-bottom: 1px solid #f2efea;
+    border-bottom: 1px solid #2d2a23;
     text-decoration: none;
     transition: var(--transition);
 }
@@ -449,7 +440,7 @@ header {
     height: 60px;
     border-radius: var(--radius-md);
     object-fit: cover;
-    background-color: #faf8f5;
+    background-color: #24221d;
     border: 1px solid var(--border-color);
 }
 
@@ -495,7 +486,7 @@ footer {
     border-top: 1px solid var(--border-color);
     color: var(--text-secondary);
     font-size: 0.78rem;
-    background: #fcfaf5;
+    background: #1a1915;
 }
 
 .footer-container {
@@ -509,17 +500,152 @@ footer {
     letter-spacing: 0.5px;
 }
 
+/* ─── APP LAYOUT WRAPPER & SKYSCRAPER ADS ────────────────────────────────── */
+.app-layout-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px;
+    max-width: 1650px;
+    margin: 30px auto;
+    padding: 0 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.main-container {
+    flex-grow: 1;
+    max-width: 1150px;
+    margin: 0;
+    width: 100%;
+}
+
+.skyscraper-column {
+    width: 210px;
+    flex-shrink: 0;
+    position: sticky;
+    top: 30px;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 20px;
+    box-sizing: border-box;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    transition: var(--transition);
+}
+
+.skyscraper-column:hover {
+    border-color: rgba(197, 160, 89, 0.3);
+}
+
+.skyscraper-title {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.skyscraper-title i {
+    color: var(--accent-gold);
+}
+
+.skyscraper-items-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.skyscraper-item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.01);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.skyscraper-item:hover {
+    border-color: var(--accent-gold);
+    background: #24221d;
+    transform: translateY(-2px);
+}
+
+.skyscraper-item-img {
+    width: 100%;
+    height: 110px;
+    object-fit: cover;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-color);
+}
+
+.skyscraper-item-title {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    line-height: 1.3;
+}
+
+.skyscraper-item-price {
+    font-size: 0.8rem;
+    color: var(--accent-gold);
+    font-weight: 700;
+}
+
 /* ─── RESPONSIVE DESIGN ──────────────────────────────────────────────────── */
+@media (max-width: 1350px) {
+    .app-layout-wrapper {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        margin: 20px auto;
+    }
+    .main-container {
+        max-width: 1200px;
+    }
+    .skyscraper-column {
+        width: 100%;
+        position: static;
+        order: 3; /* Render at bottom */
+    }
+    .skyscraper-items-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 20px;
+        width: 100%;
+    }
+    .skyscraper-item-img {
+        height: 140px;
+    }
+}
+
 @media (max-width: 768px) {
     .main-container {
         grid-template-columns: 1fr;
-        margin: 20px auto;
     }
     .logo {
-        font-size: 1.6rem;
+        font-size: 1.4rem;
         letter-spacing: 4px;
     }
     .timer-display {
         font-size: 4.5rem;
+    }
+    .skyscraper-items-container {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 15px;
+    }
+    .skyscraper-item-img {
+        height: 100px;
     }
 }

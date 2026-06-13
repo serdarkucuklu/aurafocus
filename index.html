@@ -27,105 +27,110 @@
     <header>
         <div class="header-container">
             <h1 class="logo">A U R A <span class="accent">F O C U S</span></h1>
-            <p class="tagline">Yüksek Performanslı Zihinler İçin Minimalist Estetik</p>
         </div>
     </header>
 
-    <main class="main-container">
-        <!-- LEFT COLUMN: Focus Dashboard -->
-        <section class="left-col">
-            <!-- Pomodoro Timer Widget -->
-            <div class="glass-card timer-card">
-                <div class="timer-modes">
-                    <button class="mode-btn active" data-time="1500">Odaklan (25 dk)</button>
-                    <button class="mode-btn" data-time="300">Mola (5 dk)</button>
-                    <button class="mode-btn" data-time="900">Mola (15 dk)</button>
-                </div>
-                <div class="timer-display" id="timer-display">25:00</div>
-                <p class="timer-helper">Pomodoro Tekniği: 25 dakika odaklan, 5 dakika mola ver.</p>
-                <div class="timer-controls">
-                    <button class="control-btn" id="start-btn"><i class="fa-solid fa-play"></i> Başlat</button>
-                    <button class="control-btn" id="reset-btn"><i class="fa-solid fa-rotate-right"></i> Sıfırla</button>
-                </div>
+    <div class="app-layout-wrapper">
+        <!-- LEFT SKYSCRAPER COLUMN -->
+        <aside class="skyscraper-column left-skyscraper">
+            <div class="skyscraper-title"><i class="fa-solid fa-bag-shopping"></i> Önerilen Donanım</div>
+            <div class="skyscraper-items-container" id="left-ad-list">
+                <!-- Populated dynamically -->
             </div>
+        </aside>
 
-            <!-- Ambient Sound Machine -->
-            <div class="glass-card ambient-card">
-                <h3 class="section-title"><i class="fa-solid fa-sliders"></i> Ortam Sesleri</h3>
-                <div class="sound-grid">
-                    <div class="sound-item" data-sound="rain">
-                        <div class="sound-info">
-                            <i class="fa-solid fa-cloud-rain sound-icon"></i>
-                            <span>Yağmur</span>
-                        </div>
-                        <input type="range" min="0" max="100" value="0" class="volume-slider">
-                        <audio src="https://assets.mixkit.co/active_storage/sfx/2458/2458-84.wav" loop></audio>
+        <main class="main-container">
+            <!-- LEFT COLUMN: Focus Dashboard -->
+            <section class="left-col">
+                <!-- Pomodoro Timer Widget -->
+                <div class="glass-card timer-card">
+                    <div class="timer-modes">
+                        <button class="mode-btn active" data-time="1500">Odaklan (25 dk)</button>
+                        <button class="mode-btn" data-time="300">Mola (5 dk)</button>
+                        <button class="mode-btn" data-time="900">Mola (15 dk)</button>
                     </div>
-                    <div class="sound-item" data-sound="cafe">
-                        <div class="sound-info">
-                            <i class="fa-solid fa-mug-saucer sound-icon"></i>
-                            <span>Kafe Gürültüsü</span>
-                        </div>
-                        <input type="range" min="0" max="100" value="0" class="volume-slider">
-                        <audio src="https://assets.mixkit.co/active_storage/sfx/2568/2568-84.wav" loop></audio>
-                    </div>
-                    <div class="sound-item" data-sound="waves">
-                        <div class="sound-info">
-                            <i class="fa-solid fa-water sound-icon"></i>
-                            <span>Deniz Dalgası</span>
-                        </div>
-                        <input type="range" min="0" max="100" value="0" class="volume-slider">
-                        <audio src="https://assets.mixkit.co/active_storage/sfx/1188/1188-84.wav" loop></audio>
-                    </div>
-                    <div class="sound-item" data-sound="lofi">
-                        <div class="sound-info">
-                            <i class="fa-solid fa-music sound-icon"></i>
-                            <span>Lo-Fi Beats</span>
-                        </div>
-                        <input type="range" min="0" max="100" value="0" class="volume-slider">
-                        <audio src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" loop></audio>
+                    <div class="timer-display" id="timer-display">25:00</div>
+                    <p class="timer-helper">Pomodoro Tekniği: 25 dakika odaklan, 5 dakika mola ver.</p>
+                    <div class="timer-controls">
+                        <button class="control-btn" id="start-btn"><i class="fa-solid fa-play"></i> Başlat</button>
+                        <button class="control-btn" id="reset-btn"><i class="fa-solid fa-rotate-right"></i> Sıfırla</button>
                     </div>
                 </div>
-            </div>
-        </section>
 
-        <!-- RIGHT COLUMN: Mindset & E-Commerce -->
-        <section class="right-col">
-            <!-- Daily Quote Card (Linked to Instagram page) -->
-            <div class="glass-card mindset-card">
-                <div class="card-header-badge">N O B L E   V I S I O N</div>
-                <blockquote id="quote-text">"Disiplin, ne istediğiniz ile şu an ne istediğiniz arasındaki seçimdir."</blockquote>
-                <cite id="quote-author">— Günlük Centilmenlik İlkesi</cite>
-                <a href="https://instagram.com/noble.vision.tr/" target="_blank" class="promo-link">
-                    Daha Fazla İlham Al <i class="fa-brands fa-instagram"></i>
-                </a>
-            </div>
-
-            <!-- To-Do List Widget -->
-            <div class="glass-card todo-card">
-                <h3 class="section-title"><i class="fa-solid fa-list-check"></i> Bugünü Yönet</h3>
-                <div class="todo-input-container">
-                    <input type="text" id="todo-input" placeholder="Odaklanılacak görevi yaz...">
-                    <button id="add-todo-btn"><i class="fa-solid fa-plus"></i></button>
+                <!-- Ambient Sound Machine -->
+                <div class="glass-card ambient-card">
+                    <h3 class="section-title"><i class="fa-solid fa-sliders"></i> Ortam Sesleri</h3>
+                    <div class="sound-grid">
+                        <div class="sound-item" data-sound="rain">
+                            <div class="sound-info">
+                                <i class="fa-solid fa-cloud-rain sound-icon"></i>
+                                <span>Yağmur</span>
+                            </div>
+                            <input type="range" min="0" max="100" value="0" class="volume-slider">
+                            <audio src="sounds/rain.mp3" loop></audio>
+                        </div>
+                        <div class="sound-item" data-sound="cafe">
+                            <div class="sound-info">
+                                <i class="fa-solid fa-mug-saucer sound-icon"></i>
+                                <span>Kafe Gürültüsü</span>
+                            </div>
+                            <input type="range" min="0" max="100" value="0" class="volume-slider">
+                            <audio src="sounds/cafe.mp3" loop></audio>
+                        </div>
+                        <div class="sound-item" data-sound="waves">
+                            <div class="sound-info">
+                                <i class="fa-solid fa-water sound-icon"></i>
+                                <span>Deniz Dalgası</span>
+                            </div>
+                            <input type="range" min="0" max="100" value="0" class="volume-slider">
+                            <audio src="sounds/waves.mp3" loop></audio>
+                        </div>
+                        <div class="sound-item" data-sound="lofi">
+                            <div class="sound-info">
+                                <i class="fa-solid fa-music sound-icon"></i>
+                                <span>Lo-Fi Beats</span>
+                            </div>
+                            <input type="range" min="0" max="100" value="0" class="volume-slider">
+                            <audio src="sounds/lofi.mp3" loop></audio>
+                        </div>
+                    </div>
                 </div>
-                <ul class="todo-list" id="todo-list">
-                    <!-- Tasks loaded dynamically -->
-                </ul>
-            </div>
+            </section>
 
-
-
-            <!-- Shop the Aesthetic (Affiliate products) -->
-            <div class="glass-card shop-card">
-                <h3 class="section-title"><i class="fa-solid fa-bag-shopping"></i> Masaüstü Estetiği</h3>
-                <p class="section-subtitle">Üretkenliğinizi artıracak minimalist çalışma masası ekipmanları.</p>
-                <div class="product-list" id="product-list">
-                    <!-- Loaded dynamically from data.json -->
-                    <div class="product-item-placeholder">Sizin için seçilen ürünler yükleniyor...</div>
+            <!-- RIGHT COLUMN: Mindset & E-Commerce -->
+            <section class="right-col">
+                <!-- Daily Quote Card (Linked to Instagram page) -->
+                <div class="glass-card mindset-card">
+                    <div class="card-header-badge">N O B L E   V I S I O N</div>
+                    <blockquote id="quote-text">"Disiplin, ne istediğiniz ile şu an ne istediğiniz arasındaki seçimdir."</blockquote>
+                    <cite id="quote-author">— Günlük Centilmenlik İlkesi</cite>
+                    <a href="https://instagram.com/noble.vision.tr/" target="_blank" class="promo-link">
+                        Daha Fazla İlham Al <i class="fa-brands fa-instagram"></i>
+                    </a>
                 </div>
+
+                <!-- To-Do List Widget -->
+                <div class="glass-card todo-card">
+                    <h3 class="section-title"><i class="fa-solid fa-list-check"></i> Bugünü Yönet</h3>
+                    <div class="todo-input-container">
+                        <input type="text" id="todo-input" placeholder="Odaklanılacak görevi yaz...">
+                        <button id="add-todo-btn"><i class="fa-solid fa-plus"></i></button>
+                    </div>
+                    <ul class="todo-list" id="todo-list">
+                        <!-- Tasks loaded dynamically -->
+                    </ul>
+                </div>
+            </section>
+        </main>
+
+        <!-- RIGHT SKYSCRAPER COLUMN -->
+        <aside class="skyscraper-column right-skyscraper">
+            <div class="skyscraper-title"><i class="fa-solid fa-lightbulb"></i> Masaüstü İlhamı</div>
+            <div class="skyscraper-items-container" id="right-ad-list">
+                <!-- Populated dynamically -->
             </div>
-        </section>
-    </main>
+        </aside>
+    </div>
 
     <footer>
         <div class="footer-container">
