@@ -205,7 +205,7 @@ header {
 
 .sound-item {
     display: grid;
-    grid-template-columns: 1.2fr 2fr;
+    grid-template-columns: 40px 1.2fr 2fr;
     align-items: center;
     background: #322d25;
     padding: 15px 20px;
@@ -214,10 +214,105 @@ header {
     transition: var(--transition);
 }
 
-.sound-item:hover, .sound-item.active {
+.sound-item:hover {
     background: #40392f;
     border-color: var(--accent-gold);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.20);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Rain Active Color Palette */
+.sound-item[data-sound="rain"].active {
+    background: linear-gradient(135deg, #1b263b 0%, #0d1b2a 100%);
+    border-color: #54a0ff;
+    box-shadow: 0 4px 20px rgba(84, 160, 255, 0.25);
+    color: #ffffff;
+}
+.sound-item[data-sound="rain"].active .sound-icon,
+.sound-item[data-sound="rain"].active .sound-play-btn {
+    color: #54a0ff;
+}
+.sound-item[data-sound="rain"].active .sound-play-btn {
+    border-color: #54a0ff;
+}
+.sound-item[data-sound="rain"].active .volume-slider::-webkit-slider-thumb {
+    background: #54a0ff;
+}
+
+/* Cafe Active Color Palette */
+.sound-item[data-sound="cafe"].active {
+    background: linear-gradient(135deg, #4e3524 0%, #2e1d11 100%);
+    border-color: #f3a152;
+    box-shadow: 0 4px 20px rgba(243, 161, 82, 0.25);
+    color: #ffffff;
+}
+.sound-item[data-sound="cafe"].active .sound-icon,
+.sound-item[data-sound="cafe"].active .sound-play-btn {
+    color: #f3a152;
+}
+.sound-item[data-sound="cafe"].active .sound-play-btn {
+    border-color: #f3a152;
+}
+.sound-item[data-sound="cafe"].active .volume-slider::-webkit-slider-thumb {
+    background: #f3a152;
+}
+
+/* Waves Active Color Palette */
+.sound-item[data-sound="waves"].active {
+    background: linear-gradient(135deg, #103b4e 0%, #0a2533 100%);
+    border-color: #26d0ce;
+    box-shadow: 0 4px 20px rgba(38, 208, 206, 0.25);
+    color: #ffffff;
+}
+.sound-item[data-sound="waves"].active .sound-icon,
+.sound-item[data-sound="waves"].active .sound-play-btn {
+    color: #26d0ce;
+}
+.sound-item[data-sound="waves"].active .sound-play-btn {
+    border-color: #26d0ce;
+}
+.sound-item[data-sound="waves"].active .volume-slider::-webkit-slider-thumb {
+    background: #26d0ce;
+}
+
+/* Lo-Fi Active Color Palette */
+.sound-item[data-sound="lofi"].active {
+    background: linear-gradient(135deg, #3c096c 0%, #240046 100%);
+    border-color: #ff9ff3;
+    box-shadow: 0 4px 20px rgba(255, 159, 243, 0.25);
+    color: #ffffff;
+}
+.sound-item[data-sound="lofi"].active .sound-icon,
+.sound-item[data-sound="lofi"].active .sound-play-btn {
+    color: #ff9ff3;
+}
+.sound-item[data-sound="lofi"].active .sound-play-btn {
+    border-color: #ff9ff3;
+}
+.sound-item[data-sound="lofi"].active .volume-slider::-webkit-slider-thumb {
+    background: #ff9ff3;
+}
+
+.sound-play-btn {
+    background: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    transition: var(--transition);
+    padding: 0;
+}
+
+.sound-play-btn:hover {
+    border-color: var(--accent-gold);
+    color: var(--accent-gold);
+    background: rgba(216, 178, 108, 0.05);
+    transform: scale(1.1);
 }
 
 .sound-info {
@@ -231,10 +326,6 @@ header {
     color: var(--text-secondary);
     transition: var(--transition);
     width: 20px;
-}
-
-.sound-item.active .sound-icon {
-    color: var(--accent-gold);
 }
 
 .volume-slider {
@@ -255,10 +346,6 @@ header {
     border-radius: 50%;
     cursor: pointer;
     transition: var(--transition);
-}
-
-.sound-item.active .volume-slider::-webkit-slider-thumb {
-    background: var(--accent-gold);
 }
 
 /* ─── MINDSET / QUOTE CARD ───────────────────────────────────────────────── */

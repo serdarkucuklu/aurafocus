@@ -83,6 +83,25 @@ const soundItems = document.querySelectorAll('.sound-item');
 soundItems.forEach(item => {
     const slider = item.querySelector('.volume-slider');
     const audio = item.querySelector('audio');
+    const playBtn = item.querySelector('.sound-play-btn');
+    const playIcon = playBtn.querySelector('i');
+    
+    playBtn.addEventListener('click', () => {
+        if (audio.paused) {
+            // Start at a standard 50% volume if it was at 0
+            if (slider.value == 0) {
+                slider.value = 50;
+                audio.volume = 0.5;
+            }
+            audio.play().catch(err => console.log('Sound play blocked: ', err));
+            item.classList.add('active');
+            playIcon.className = 'fa-solid fa-pause';
+        } else {
+            audio.pause();
+            item.classList.remove('active');
+            playIcon.className = 'fa-solid fa-play';
+        }
+    });
     
     slider.addEventListener('input', (e) => {
         const val = e.target.value;
@@ -91,11 +110,13 @@ soundItems.forEach(item => {
         
         if (volume > 0) {
             item.classList.add('active');
+            playIcon.className = 'fa-solid fa-pause';
             if (audio.paused) {
                 audio.play().catch(err => console.log('Sound autoplay blocked: ', err));
             }
         } else {
             item.classList.remove('active');
+            playIcon.className = 'fa-solid fa-play';
             audio.pause();
         }
     });
