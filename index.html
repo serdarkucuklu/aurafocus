@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AuraFocus | Premium Minimalist Focus & Lifestyle Hub</title>
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="AuraFocus - Genç profesyoneller ve öğrenciler için tasarlanmış minimalist Pomodoro sayacı, sakinleştirici lofi sesleri ve estetik masaüstü önerileriyle odaklanma merkezi.">
+    <meta name="keywords" content="pomodoro, odaklanma, lofi müzik, lüks üretkenlik, minimalist masa, trendyol affiliate, noble vision, başarı zihniyeti">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,500&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Background Blur Decorative Gradients -->
+    <div class="gradient-bg">
+        <div class="g1"></div>
+        <div class="g2"></div>
+    </div>
+
+    <header>
+        <div class="header-container">
+            <h1 class="logo">A U R A <span class="accent">F O C U S</span></h1>
+            <p class="tagline">Curated Aesthetics for High-Performance Minds</p>
+        </div>
+    </header>
+
+    <main class="main-container">
+        <!-- LEFT COLUMN: Focus Dashboard -->
+        <section class="left-col">
+            <!-- Pomodoro Timer Widget -->
+            <div class="glass-card timer-card">
+                <div class="timer-modes">
+                    <button class="mode-btn active" data-time="1500">Pomodoro</button>
+                    <button class="mode-btn" data-time="300">Kısa Mola</button>
+                    <button class="mode-btn" data-time="900">Uzun Mola</button>
+                </div>
+                <div class="timer-display" id="timer-display">25:00</div>
+                <div class="timer-controls">
+                    <button class="control-btn" id="start-btn"><i class="fa-solid fa-play"></i> Başlat</button>
+                    <button class="control-btn" id="reset-btn"><i class="fa-solid fa-rotate-right"></i> Sıfırla</button>
+                </div>
+            </div>
+
+            <!-- Ambient Sound Machine -->
+            <div class="glass-card ambient-card">
+                <h3 class="section-title"><i class="fa-solid fa-sliders"></i> Ambient Sounds</h3>
+                <div class="sound-grid">
+                    <div class="sound-item" data-sound="rain">
+                        <div class="sound-info">
+                            <i class="fa-solid fa-cloud-rain sound-icon"></i>
+                            <span>Yağmur</span>
+                        </div>
+                        <input type="range" min="0" max="100" value="0" class="volume-slider">
+                        <audio src="https://assets.mixkit.co/active_storage/sfx/2458/2458-84.wav" loop></audio>
+                    </div>
+                    <div class="sound-item" data-sound="cafe">
+                        <div class="sound-info">
+                            <i class="fa-solid fa-mug-saucer sound-icon"></i>
+                            <span>Kafe Gürültüsü</span>
+                        </div>
+                        <input type="range" min="0" max="100" value="0" class="volume-slider">
+                        <audio src="https://assets.mixkit.co/active_storage/sfx/2568/2568-84.wav" loop></audio>
+                    </div>
+                    <div class="sound-item" data-sound="waves">
+                        <div class="sound-info">
+                            <i class="fa-solid fa-water sound-icon"></i>
+                            <span>Deniz Dalgası</span>
+                        </div>
+                        <input type="range" min="0" max="100" value="0" class="volume-slider">
+                        <audio src="https://assets.mixkit.co/active_storage/sfx/1188/1188-84.wav" loop></audio>
+                    </div>
+                    <div class="sound-item" data-sound="lofi">
+                        <div class="sound-info">
+                            <i class="fa-solid fa-music sound-icon"></i>
+                            <span>Lo-Fi Beats</span>
+                        </div>
+                        <input type="range" min="0" max="100" value="0" class="volume-slider">
+                        <audio src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" loop></audio>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- RIGHT COLUMN: Mindset & E-Commerce -->
+        <section class="right-col">
+            <!-- Daily Quote Card (Linked to Instagram page) -->
+            <div class="glass-card mindset-card">
+                <div class="card-header-badge">N O B L E   V I S I O N</div>
+                <blockquote id="quote-text">"Disiplin, ne istediğiniz ile şu an ne istediğiniz arasındaki seçimdir."</blockquote>
+                <cite id="quote-author">— Günlük Centilmenlik İlkesi</cite>
+                <a href="https://instagram.com/noble.vision.tr/" target="_blank" class="promo-link">
+                    Daha Fazla İlham Al <i class="fa-brands fa-instagram"></i>
+                </a>
+            </div>
+
+            <!-- To-Do List Widget -->
+            <div class="glass-card todo-card">
+                <h3 class="section-title"><i class="fa-solid fa-list-check"></i> Bugünü Yönet</h3>
+                <div class="todo-input-container">
+                    <input type="text" id="todo-input" placeholder="Odaklanılacak görevi yaz...">
+                    <button id="add-todo-btn"><i class="fa-solid fa-plus"></i></button>
+                </div>
+                <ul class="todo-list" id="todo-list">
+                    <!-- Tasks loaded dynamically -->
+                </ul>
+            </div>
+
+            <!-- Shop the Aesthetic (Affiliate products) -->
+            <div class="glass-card shop-card">
+                <h3 class="section-title"><i class="fa-solid fa-bag-shopping"></i> Shop the Aesthetic</h3>
+                <p class="section-subtitle">Üretkenliğinizi artıracak minimalist çalışma masası ekipmanları.</p>
+                <div class="product-list" id="product-list">
+                    <!-- Loaded dynamically from data.json -->
+                    <div class="product-item-placeholder">Ürünler otonom aranıyor...</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2026 AuraFocus. Powered by Autonomous AI. All rights reserved.</p>
+            <p class="privacy-note">Batı kalitesinde minimalist tasarımlarla odaklanma gücü.</p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
