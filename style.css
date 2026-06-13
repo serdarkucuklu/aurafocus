@@ -1,18 +1,18 @@
-/* ─── BASE STYLES & VARIABLES ────────────────────────────────────────────── */
+/* ─── BASE STYLES & VARIABLES (Premium FT-Inspired Light Theme) ────────── */
 :root {
-    --bg-primary: #0a0b10;
-    --card-bg: rgba(15, 17, 26, 0.7);
-    --border-color: rgba(212, 175, 55, 0.15); /* Subtle gold border */
-    --text-primary: #f8f9fa;
-    --text-secondary: #a0a5b5;
-    --accent-gold: #d4af37;
-    --accent-gold-hover: #f3cf65;
-    --accent-silver: #c0c0c0;
-    --radius-lg: 20px;
-    --radius-md: 12px;
+    --bg-primary: #fdfbf7;      /* Warm cream paper background */
+    --card-bg: #ffffff;         /* Pure white cards */
+    --border-color: #eae7e1;    /* Subtle warm border */
+    --text-primary: #1c1d21;     /* Charcoal/dark graphite text */
+    --text-secondary: #5c5e66;   /* Muted graphite text */
+    --accent-gold: #9e7d28;      /* Deep bronze gold */
+    --accent-gold-hover: #b8901c;/* Lighter gold on hover */
+    --accent-silver: #8c8e94;
+    --radius-lg: 16px;
+    --radius-md: 8px;
     --font-sans: 'Inter', sans-serif;
     --font-serif: 'Playfair Display', serif;
-    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 * {
@@ -33,46 +33,12 @@ body {
     justify-content: space-between;
 }
 
-/* ─── DECORATIVE BACKDROP BLUR ───────────────────────────────────────────── */
-.gradient-bg {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    overflow: hidden;
-    pointer-events: none;
-}
-
-.gradient-bg .g1, .gradient-bg .g2 {
-    position: absolute;
-    border-radius: 50%;
-    filter: blur(120px);
-    opacity: 0.15;
-}
-
-.gradient-bg .g1 {
-    top: -10%;
-    left: -10%;
-    width: 50vw;
-    height: 50vw;
-    background: radial-gradient(circle, var(--accent-gold) 0%, transparent 80%);
-}
-
-.gradient-bg .g2 {
-    bottom: -10%;
-    right: -10%;
-    width: 60vw;
-    height: 60vw;
-    background: radial-gradient(circle, #4a3b8c 0%, transparent 80%);
-}
-
 /* ─── HEADER ─────────────────────────────────────────────────────────────── */
 header {
     padding: 40px 20px 20px;
     text-align: center;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+    border-bottom: 1px solid var(--border-color);
+    background: #fcfaf5;
 }
 
 .logo {
@@ -87,15 +53,15 @@ header {
 
 .logo .accent {
     color: var(--accent-gold);
-    font-weight: 300;
+    font-weight: 400;
 }
 
 .tagline {
-    font-size: 0.85rem;
-    letter-spacing: 3px;
+    font-size: 0.8rem;
+    letter-spacing: 4px;
     color: var(--text-secondary);
     text-transform: uppercase;
-    font-weight: 400;
+    font-weight: 500;
 }
 
 /* ─── CONTAINER LAYOUT ───────────────────────────────────────────────────── */
@@ -110,32 +76,32 @@ header {
     flex-grow: 1;
 }
 
-/* ─── GLASS CARDS ────────────────────────────────────────────────────────── */
+/* ─── CARDS ────────────────────────────────────────────────────────── */
 .glass-card {
     background: var(--card-bg);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--border-color);
     border-radius: var(--radius-lg);
     padding: 35px;
     margin-bottom: 30px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 4px 20px rgba(28, 29, 33, 0.02);
     transition: var(--transition);
 }
 
 .glass-card:hover {
-    border-color: var(--border-color);
+    border-color: rgba(158, 125, 40, 0.3);
 }
 
 .section-title {
     font-size: 1.25rem;
-    font-weight: 600;
+    font-weight: 700;
     margin-bottom: 20px;
     color: var(--text-primary);
     display: flex;
     align-items: center;
     gap: 10px;
-    letter-spacing: 1px;
+    font-family: var(--font-serif);
+    font-style: italic;
+    letter-spacing: 0.5px;
 }
 
 .section-title i {
@@ -152,7 +118,8 @@ header {
     justify-content: center;
     gap: 10px;
     margin-bottom: 30px;
-    background: rgba(0, 0, 0, 0.2);
+    background: #faf8f5;
+    border: 1px solid var(--border-color);
     padding: 6px;
     border-radius: 30px;
     display: inline-flex;
@@ -163,17 +130,16 @@ header {
     border: none;
     color: var(--text-secondary);
     padding: 8px 20px;
-    font-size: 0.9rem;
-    font-weight: 500;
+    font-size: 0.85rem;
+    font-weight: 600;
     cursor: pointer;
     border-radius: 20px;
     transition: var(--transition);
 }
 
 .mode-btn.active, .mode-btn:hover {
-    color: var(--bg-primary);
+    color: #ffffff;
     background-color: var(--accent-gold);
-    font-weight: 600;
 }
 
 .timer-display {
@@ -183,16 +149,15 @@ header {
     margin: 20px 0;
     font-family: var(--font-sans);
     color: var(--text-primary);
-    text-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
 }
 
 .timer-helper {
-    font-size: 0.85rem;
+    font-size: 0.82rem;
     color: var(--text-secondary);
     margin-top: -10px;
     margin-bottom: 25px;
     font-style: italic;
-    opacity: 0.8;
+    opacity: 0.9;
 }
 
 .timer-controls {
@@ -206,8 +171,8 @@ header {
     border: 1px solid var(--accent-gold);
     color: var(--accent-gold);
     padding: 12px 30px;
-    font-size: 1rem;
-    font-weight: 600;
+    font-size: 0.95rem;
+    font-weight: 700;
     border-radius: 30px;
     cursor: pointer;
     transition: var(--transition);
@@ -218,12 +183,12 @@ header {
 
 .control-btn#start-btn {
     background-color: var(--accent-gold);
-    color: var(--bg-primary);
+    color: #ffffff;
 }
 
 .control-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.2);
+    box-shadow: 0 4px 12px rgba(158, 125, 40, 0.1);
 }
 
 .control-btn#start-btn:hover {
@@ -234,23 +199,24 @@ header {
 .sound-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 20px;
+    gap: 15px;
 }
 
 .sound-item {
     display: grid;
     grid-template-columns: 1.2fr 2fr;
     align-items: center;
-    background: rgba(255, 255, 255, 0.02);
+    background: #faf8f5;
     padding: 15px 20px;
     border-radius: var(--radius-md);
-    border: 1px solid rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-color);
     transition: var(--transition);
 }
 
 .sound-item:hover, .sound-item.active {
-    background: rgba(255, 255, 255, 0.04);
-    border-color: rgba(212, 175, 55, 0.1);
+    background: #ffffff;
+    border-color: var(--accent-gold);
+    box-shadow: 0 4px 15px rgba(158, 125, 40, 0.05);
 }
 
 .sound-info {
@@ -260,7 +226,7 @@ header {
 }
 
 .sound-icon {
-    font-size: 1.2rem;
+    font-size: 1.15rem;
     color: var(--text-secondary);
     transition: var(--transition);
     width: 20px;
@@ -268,14 +234,13 @@ header {
 
 .sound-item.active .sound-icon {
     color: var(--accent-gold);
-    text-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
 }
 
 .volume-slider {
     -webkit-appearance: none;
     width: 100%;
     height: 4px;
-    background: rgba(255, 255, 255, 0.1);
+    background: #eae7e1;
     outline: none;
     border-radius: 2px;
     transition: var(--transition);
@@ -293,7 +258,6 @@ header {
 
 .sound-item.active .volume-slider::-webkit-slider-thumb {
     background: var(--accent-gold);
-    box-shadow: 0 0 8px rgba(212, 175, 55, 0.5);
 }
 
 /* ─── MINDSET / QUOTE CARD ───────────────────────────────────────────────── */
@@ -304,12 +268,12 @@ header {
 }
 
 .card-header-badge {
-    font-size: 0.75rem;
+    font-size: 0.72rem;
     letter-spacing: 3px;
     color: var(--accent-gold);
     text-transform: uppercase;
     margin-bottom: 15px;
-    font-weight: 600;
+    font-weight: 700;
 }
 
 #quote-text {
@@ -323,7 +287,7 @@ header {
 }
 
 #quote-author {
-    font-size: 0.85rem;
+    font-size: 0.82rem;
     color: var(--text-secondary);
     letter-spacing: 1px;
     display: block;
@@ -336,8 +300,8 @@ header {
     gap: 8px;
     color: var(--accent-gold);
     text-decoration: none;
-    font-size: 0.85rem;
-    font-weight: 600;
+    font-size: 0.8rem;
+    font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1px;
     transition: var(--transition);
@@ -359,8 +323,8 @@ header {
 
 #todo-input {
     flex-grow: 1;
-    background: rgba(0, 0, 0, 0.3);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: #faf8f5;
+    border: 1px solid var(--border-color);
     color: var(--text-primary);
     padding: 12px 16px;
     border-radius: var(--radius-md);
@@ -371,12 +335,12 @@ header {
 
 #todo-input:focus {
     border-color: var(--accent-gold);
-    background: rgba(0, 0, 0, 0.5);
+    background: #ffffff;
 }
 
 #add-todo-btn {
     background: var(--accent-gold);
-    color: var(--bg-primary);
+    color: #ffffff;
     border: none;
     width: 46px;
     height: 46px;
@@ -408,15 +372,15 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 12px 16px;
-    background: rgba(255, 255, 255, 0.01);
-    border: 1px solid rgba(255, 255, 255, 0.02);
+    background: #faf8f5;
+    border: 1px solid var(--border-color);
     border-radius: var(--radius-md);
     transition: var(--transition);
 }
 
 .todo-item:hover {
-    background: rgba(255, 255, 255, 0.02);
-    border-color: rgba(255, 255, 255, 0.05);
+    background: #ffffff;
+    border-color: var(--accent-gold);
 }
 
 .todo-item-text {
@@ -436,21 +400,22 @@ header {
 .delete-todo-btn {
     background: transparent;
     border: none;
-    color: rgba(255, 255, 255, 0.2);
+    color: rgba(28, 29, 33, 0.3);
     cursor: pointer;
     transition: var(--transition);
 }
 
 .delete-todo-btn:hover {
-    color: #e74c3c;
+    color: #c62828;
 }
 
-/* ─── SHOP THE AESTHETIC ─────────────────────────────────────────────────── */
+/* ─── SHOP THE AESTHETIC / MASAÜSTÜ ESTETİĞİ ────────────────────────────── */
 .section-subtitle {
-    font-size: 0.85rem;
+    font-size: 0.82rem;
     color: var(--text-secondary);
     margin-bottom: 20px;
     margin-top: -15px;
+    letter-spacing: 0.2px;
 }
 
 .product-list {
@@ -466,13 +431,17 @@ header {
     padding: 16px 0;
     background: transparent;
     border: none;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    border-bottom: 1px solid #f2efea;
     text-decoration: none;
     transition: var(--transition);
 }
 
+.product-item:last-child {
+    border-bottom: none;
+}
+
 .product-item:hover {
-    border-bottom-color: rgba(212, 175, 55, 0.25);
+    border-bottom-color: var(--accent-gold);
 }
 
 .product-img {
@@ -480,8 +449,8 @@ header {
     height: 60px;
     border-radius: var(--radius-md);
     object-fit: cover;
-    background-color: rgba(0, 0, 0, 0.3);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    background-color: #faf8f5;
+    border: 1px solid var(--border-color);
 }
 
 .product-details {
@@ -489,16 +458,16 @@ header {
 }
 
 .product-title {
-    font-size: 0.95rem;
-    font-weight: 500;
+    font-size: 0.92rem;
+    font-weight: 600;
     color: var(--text-primary);
     margin-bottom: 4px;
 }
 
 .product-price {
-    font-size: 0.85rem;
+    font-size: 0.82rem;
     color: var(--accent-gold);
-    font-weight: 600;
+    font-weight: 700;
 }
 
 .product-arrow {
@@ -519,63 +488,14 @@ header {
     padding: 20px;
 }
 
-/* ─── AD PLACEMENT STYLES ────────────────────────────────────────────────── */
-.ad-card {
-    position: relative;
-    overflow: hidden;
-}
-
-.ad-badge {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    font-size: 0.65rem;
-    font-weight: 700;
-    color: var(--accent-gold);
-    letter-spacing: 2px;
-    opacity: 0.8;
-}
-
-.ad-placeholder {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 120px;
-    border: 1px dashed rgba(212, 175, 55, 0.25);
-    border-radius: var(--radius-md);
-    background: rgba(255, 255, 255, 0.02);
-    padding: 20px;
-    transition: var(--transition);
-}
-
-.ad-card:hover .ad-placeholder {
-    border-color: rgba(212, 175, 55, 0.5);
-    background: rgba(255, 255, 255, 0.04);
-}
-
-.ad-fallback-text {
-    font-size: 0.8rem;
-    color: var(--text-secondary);
-    font-style: italic;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.ad-fallback-text i {
-    color: var(--accent-gold);
-    font-size: 1rem;
-}
-
 /* ─── FOOTER ─────────────────────────────────────────────────────────────── */
 footer {
     padding: 40px 20px;
     text-align: center;
-    border-top: 1px solid rgba(255, 255, 255, 0.03);
+    border-top: 1px solid var(--border-color);
     color: var(--text-secondary);
-    font-size: 0.8rem;
+    font-size: 0.78rem;
+    background: #fcfaf5;
 }
 
 .footer-container {
@@ -585,7 +505,7 @@ footer {
 
 .privacy-note {
     margin-top: 6px;
-    opacity: 0.6;
+    opacity: 0.8;
     letter-spacing: 0.5px;
 }
 
