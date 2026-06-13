@@ -1,13 +1,12 @@
-/* ─── BASE STYLES & VARIABLES (Premium FT-Inspired Light Theme) ────────── */
 :root {
-    --bg-primary: #151411;      /* Warm dark espresso background */
-    --card-bg: #1e1c18;         /* Lighter warm dark cards */
-    --border-color: #2e2a23;    /* Subtle warm bronze border */
-    --text-primary: #e6e1d6;     /* Soft warm cream text */
-    --text-secondary: #a8a296;   /* Muted warm cream text */
-    --accent-gold: #c5a059;      /* Warm bronze gold */
-    --accent-gold-hover: #dfb86e;/* Lighter gold on hover */
-    --accent-silver: #7e796f;
+    --bg-primary: #2b2721;      /* Cozy warm coffee background */
+    --card-bg: #37322a;         /* Lighter warm latte cards */
+    --border-color: #494238;    /* Subtle warm bronze border */
+    --text-primary: #f6f2e8;     /* Brighter soft warm cream text */
+    --text-secondary: #c0b7a8;   /* Lighter muted warm text */
+    --accent-gold: #d8b26c;      /* Brighter warm gold */
+    --accent-gold-hover: #ead098;/* Lighter gold on hover */
+    --accent-silver: #968e80;
     --radius-lg: 16px;
     --radius-md: 8px;
     --font-sans: 'Inter', sans-serif;
@@ -38,16 +37,27 @@ header {
     padding: 15px 20px;
     text-align: center;
     border-bottom: 1px solid var(--border-color);
-    background: #1a1915;
+    background: #211f1a;
 }
 
 .logo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
     font-family: var(--font-serif);
     font-style: italic;
     font-weight: 600;
     font-size: 1.6rem;
     letter-spacing: 2px;
     color: var(--text-primary);
+}
+
+.logo-svg {
+    width: 28px;
+    height: 28px;
+    color: var(--accent-gold);
+    flex-shrink: 0;
 }
 
 .logo .accent {
@@ -109,7 +119,7 @@ header {
     justify-content: center;
     gap: 10px;
     margin-bottom: 30px;
-    background: #26241f;
+    background: #322d25;
     border: 1px solid var(--border-color);
     padding: 6px;
     border-radius: 30px;
@@ -197,7 +207,7 @@ header {
     display: grid;
     grid-template-columns: 1.2fr 2fr;
     align-items: center;
-    background: #24221d;
+    background: #322d25;
     padding: 15px 20px;
     border-radius: var(--radius-md);
     border: 1px solid var(--border-color);
@@ -205,7 +215,7 @@ header {
 }
 
 .sound-item:hover, .sound-item.active {
-    background: #2d2b24;
+    background: #40392f;
     border-color: var(--accent-gold);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.20);
 }
@@ -231,7 +241,7 @@ header {
     -webkit-appearance: none;
     width: 100%;
     height: 4px;
-    background: #3d3930;
+    background: #554d3f;
     outline: none;
     border-radius: 2px;
     transition: var(--transition);
@@ -314,7 +324,7 @@ header {
 
 #todo-input {
     flex-grow: 1;
-    background: #24221d;
+    background: #322d25;
     border: 1px solid var(--border-color);
     color: var(--text-primary);
     padding: 12px 16px;
@@ -326,7 +336,7 @@ header {
 
 #todo-input:focus {
     border-color: var(--accent-gold);
-    background: #2d2b24;
+    background: #40392f;
 }
 
 #add-todo-btn {
@@ -363,14 +373,14 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 12px 16px;
-    background: #24221d;
+    background: #322d25;
     border: 1px solid var(--border-color);
     border-radius: var(--radius-md);
     transition: var(--transition);
 }
 
 .todo-item:hover {
-    background: #2d2b24;
+    background: #40392f;
     border-color: var(--accent-gold);
 }
 
@@ -440,7 +450,7 @@ header {
     height: 60px;
     border-radius: var(--radius-md);
     object-fit: cover;
-    background-color: #24221d;
+    background-color: #322d25;
     border: 1px solid var(--border-color);
 }
 
@@ -486,7 +496,7 @@ footer {
     border-top: 1px solid var(--border-color);
     color: var(--text-secondary);
     font-size: 0.78rem;
-    background: #1a1915;
+    background: #211f1a;
 }
 
 .footer-container {
@@ -578,7 +588,7 @@ footer {
 
 .skyscraper-item:hover {
     border-color: var(--accent-gold);
-    background: #24221d;
+    background: #40392f;
     transform: translateY(-2px);
 }
 
