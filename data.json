@@ -1,27 +1,27 @@
 {
   "daily_quote": {
-    "quote": "Sadelik, zihni berraklaştırır ve eylemi keskinleştirir. Gerçek üretkenlik, fazlalıklardan arınmış olanda gizlidir.",
-    "author": "N O B L E V I S I O N"
+    "quote": "Gürültüden arınmış bir zihin, berrak bir vizyonun başlangıcıdır. Odağını sadeleştir, potansiyelini yükselt.",
+    "author": "N O B L E   V I S I O N"
   },
   "products": [
     {
-      "title": "Premium Keçe Sümen (Masa Pedi)",
-      "price": "399 TL",
+      "title": "AuraFocus Monitör Işık Barı",
+      "price": "899 TL",
+      "image_url": "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=150",
+      "affiliate_link": "https://www.amazon.com.tr/s?k=monitor+isik+bari&tag=aurafocus-21"
+    },
+    {
+      "title": "Minimalist Keçe Sümen",
+      "price": "349 TL",
       "image_url": "https://images.unsplash.com/photo-1616401784845-180882ba9ba8?w=150",
       "affiliate_link": "https://www.amazon.com.tr/s?k=kece+sumen&tag=aurafocus-21"
     },
     {
-      "title": "Ergonomik Yükseltici Monitör Standı",
-      "price": "649 TL",
+      "title": "Premium Dikey Laptop Standı",
+      "price": "599 TL",
       "image_url": "https://images.unsplash.com/photo-1586495777744-4413f21062fa?w=150",
-      "affiliate_link": "https://www.amazon.com.tr/s?k=ayarlanabilir+monitor+standi&tag=aurafocus-21"
-    },
-    {
-      "title": "Minimalist Şık Dokunmatik LED Masa Lambası",
-      "price": "499 TL",
-      "image_url": "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=150",
-      "affiliate_link": "https://www.amazon.com.tr/s?k=minimalist+led+masa+lambasi&tag=aurafocus-21"
+      "affiliate_link": "https://www.amazon.com.tr/s?k=dikey+laptop+standi&tag=aurafocus-21"
     }
   ],
-  "last_updated": "2026-06-13T16:09:37.817231Z"
+  "last_updated": "2026-06-13T16:57:24.859514Z"
 }
