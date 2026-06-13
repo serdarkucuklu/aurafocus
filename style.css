@@ -186,6 +186,15 @@ header {
     text-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
 }
 
+.timer-helper {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-top: -10px;
+    margin-bottom: 25px;
+    font-style: italic;
+    opacity: 0.8;
+}
+
 .timer-controls {
     display: flex;
     justify-content: center;
