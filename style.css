@@ -805,3 +805,114 @@ footer {
         height: 100px;
     }
 }
+
+/* ─── SOUND PRESETS ──────────────────────────────────────────────────────── */
+.presets-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.preset-btn {
+    background: rgba(22, 20, 36, 0.45);
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    padding: 12px;
+    border-radius: var(--radius-md);
+    font-size: 0.82rem;
+    font-family: var(--font-sans);
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.preset-btn:hover {
+    background: rgba(42, 38, 64, 0.85);
+    border-color: var(--accent-gold);
+    color: var(--text-primary);
+}
+
+.preset-btn.active {
+    background: var(--accent-gold);
+    color: #0e0d16;
+    border-color: var(--accent-gold);
+    box-shadow: 0 0 12px rgba(255, 208, 117, 0.3);
+}
+
+/* ─── FOCUS TRACKER & ACTIVITY GRID ──────────────────────────────────────── */
+.tracker-stats {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.tracker-stat-box {
+    flex: 1;
+    background: rgba(22, 20, 36, 0.45);
+    border: 1px solid var(--border-color);
+    padding: 12px;
+    border-radius: var(--radius-md);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.tracker-stat-val {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.tracker-stat-label {
+    font-size: 0.72rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.activity-grid-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.activity-grid-title {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.activity-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 6px;
+}
+
+.activity-day {
+    aspect-ratio: 1;
+    border-radius: 3px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.02);
+    transition: var(--transition);
+}
+
+.activity-day.active {
+    background: var(--accent-gold);
+    box-shadow: 0 0 8px rgba(255, 208, 117, 0.4);
+}
+
+/* ─── LOFI PLAYER WIDGET ─────────────────────────────────────────────────── */
+.lofi-player-container {
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    background: #000;
+    height: 80px;
+}

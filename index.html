@@ -108,6 +108,26 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- Sound Presets Card -->
+                <div class="glass-card presets-card">
+                    <h3 class="section-title"><i class="fa-solid fa-wand-magic-sparkles"></i> Hazır Odak Ortamları</h3>
+                    <p class="section-subtitle">Tek tıkla zihniniz için en mükemmel ses dengesini yükleyin</p>
+                    <div class="presets-grid">
+                        <button class="preset-btn" data-preset="rainy-library">
+                            <i class="fa-solid fa-book"></i> Yağmurlu Kütüphane
+                        </button>
+                        <button class="preset-btn" data-preset="cyber-cafe">
+                            <i class="fa-solid fa-mug-hot"></i> Siber Kafe
+                        </button>
+                        <button class="preset-btn" data-preset="ocean-breeze">
+                            <i class="fa-solid fa-umbrella-beach"></i> Deniz Kenarı
+                        </button>
+                        <button class="preset-btn" data-preset="cozy-study">
+                            <i class="fa-solid fa-graduation-cap"></i> Lo-Fi Çalışma
+                        </button>
+                    </div>
+                </div>
             </section>
 
             <!-- RIGHT COLUMN: Mindset & E-Commerce -->
@@ -122,6 +142,30 @@
                     </a>
                 </div>
 
+                <!-- Focus Tracker Card -->
+                <div class="glass-card tracker-card">
+                    <h3 class="section-title"><i class="fa-solid fa-fire" style="color: var(--accent-gold);"></i> Odaklanma Serisi</h3>
+                    <p class="section-subtitle">Günlük istikrarınızı koruyun ve performansınızı takip edin</p>
+                    
+                    <div class="tracker-stats">
+                        <div class="tracker-stat-box">
+                            <span class="tracker-stat-val" id="focus-streak-count">🔥 0 Gün</span>
+                            <span class="tracker-stat-label">Aktif Seri</span>
+                        </div>
+                        <div class="tracker-stat-box">
+                            <span class="tracker-stat-val" id="focus-total-mins">0 dk</span>
+                            <span class="tracker-stat-label">Toplam Süre</span>
+                        </div>
+                    </div>
+
+                    <div class="activity-grid-wrapper">
+                        <span class="activity-grid-title">Son Odak Günleri</span>
+                        <div class="activity-grid" id="activity-grid">
+                            <!-- Render 21 days squares dynamically -->
+                        </div>
+                    </div>
+                </div>
+
                 <!-- To-Do List Widget -->
                 <div class="glass-card todo-card">
                     <h3 class="section-title"><i class="fa-solid fa-list-check"></i> Bugünü Yönet</h3>
@@ -132,6 +176,15 @@
                     <ul class="todo-list" id="todo-list">
                         <!-- Tasks loaded dynamically -->
                     </ul>
+                </div>
+
+                <!-- Lofi Player Card -->
+                <div class="glass-card lofi-card">
+                    <h3 class="section-title"><i class="fa-solid fa-compact-disc"></i> Lofi Radyo</h3>
+                    <p class="section-subtitle">Odaklanma dalganızı yakalamak için canlı müzik yayını</p>
+                    <div class="lofi-player-container">
+                        <iframe width="100%" height="80" src="https://www.youtube.com/embed/jfKfPfyJRdk?autoplay=0&mute=1" title="Lofi Player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
                 </div>
             </section>
         </main>

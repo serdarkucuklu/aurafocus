@@ -27,6 +27,12 @@ function startTimer() {
             } else {
                 clearInterval(timerInterval);
                 playAlarm();
+                
+                const activeMode = document.querySelector('.mode-btn.active');
+                if (activeMode && activeMode.dataset.time === "1500") {
+                    recordFocusSession(25);
+                }
+                
                 alert('Mola Zamanı!');
                 resetTimer();
             }
@@ -311,7 +317,140 @@ function renderProducts(products) {
     });
 }
 
+// ─── SOUND PRESETS ────────────────────────────────────────────────────────
+const presets = {
+    'rainy-library': { rain: 80, cafe: 0, waves: 0, lofi: 20 },
+    'cyber-cafe': { rain: 30, cafe: 70, waves: 0, lofi: 10 },
+    'ocean-breeze': { rain: 0, cafe: 0, waves: 65, lofi: 35 },
+    'cozy-study': { rain: 10, cafe: 0, waves: 0, lofi: 85 }
+};
+
+function applyPreset(presetName) {
+    const config = presets[presetName];
+    if (!config) return;
+
+    soundItems.forEach(item => {
+        const soundType = item.dataset.sound;
+        const volumeVal = config[soundType];
+        const audio = item.querySelector('audio');
+        const slider = item.querySelector('.volume-slider');
+        const playIcon = item.querySelector('.sound-play-btn i');
+
+        slider.value = volumeVal;
+        audio.volume = volumeVal / 100;
+
+        if (volumeVal > 0) {
+            item.classList.add('active');
+            playIcon.className = 'fa-solid fa-pause';
+            audio.play().catch(err => console.log('Autoplay blocked: ', err));
+        } else {
+            item.classList.remove('active');
+            playIcon.className = 'fa-solid fa-play';
+            audio.pause();
+        }
+    });
+
+    document.querySelectorAll('.preset-btn').forEach(btn => {
+        if (btn.dataset.preset === presetName) {
+            btn.classList.add('active');
+        } else {
+            btn.classList.remove('active');
+        }
+    });
+}
+
+// ─── FOCUS TRACKER & ACTIVITY GRID ────────────────────────────────────────
+function recordFocusSession(minutes) {
+    let focusMinutes = parseInt(localStorage.getItem('focus_total_minutes')) || 0;
+    focusMinutes += minutes;
+    localStorage.setItem('focus_total_minutes', focusMinutes);
+
+    const today = new Date().toDateString();
+    let focusDates = JSON.parse(localStorage.getItem('focus_dates')) || [];
+    if (!focusDates.includes(today)) {
+        focusDates.push(today);
+        localStorage.setItem('focus_dates', JSON.stringify(focusDates));
+    }
+
+    updateStreak();
+    renderActivityGrid();
+}
+
+function updateStreak() {
+    let focusDates = JSON.parse(localStorage.getItem('focus_dates')) || [];
+    let streak = 0;
+    
+    if (focusDates.length > 0) {
+        const dates = focusDates.map(d => new Date(d)).sort((a,b) => b - a);
+        const today = new Date();
+        today.setHours(0,0,0,0);
+        
+        let lastDate = dates[0];
+        lastDate.setHours(0,0,0,0);
+        
+        const diffTime = Math.abs(today - lastDate);
+        const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+        
+        if (diffDays <= 1) {
+            streak = 1;
+            for (let i = 1; i < dates.length; i++) {
+                const prevDate = dates[i];
+                prevDate.setHours(0,0,0,0);
+                const dayDiff = Math.ceil(Math.abs(lastDate - prevDate) / (1000 * 60 * 60 * 24));
+                if (dayDiff === 1) {
+                    streak++;
+                    lastDate = prevDate;
+                } else if (dayDiff > 1) {
+                    break;
+                }
+            }
+        }
+    }
+
+    const streakCountEl = document.getElementById('focus-streak-count');
+    const totalMinsEl = document.getElementById('focus-total-mins');
+    if (streakCountEl) streakCountEl.textContent = `🔥 ${streak} Gün`;
+    if (totalMinsEl) {
+        const totalMinutes = parseInt(localStorage.getItem('focus_total_minutes')) || 0;
+        totalMinsEl.textContent = `${totalMinutes} dk`;
+    }
+}
+
+function renderActivityGrid() {
+    const gridEl = document.getElementById('activity-grid');
+    if (!gridEl) return;
+    gridEl.innerHTML = '';
+
+    const focusDates = JSON.parse(localStorage.getItem('focus_dates')) || [];
+    
+    const now = new Date();
+    for (let i = 20; i >= 0; i--) {
+        const d = new Date(now);
+        d.setDate(now.getDate() - i);
+        const dateString = d.toDateString();
+        
+        const square = document.createElement('div');
+        square.className = 'activity-day';
+        
+        if (focusDates.includes(dateString)) {
+            square.classList.add('active');
+        }
+        
+        square.title = d.toLocaleDateString('tr-TR', { day: 'numeric', month: 'short' });
+        gridEl.appendChild(square);
+    }
+}
+
 // ─── INITIALIZE ──────────────────────────────────────────────────────────
 updateDisplay();
 renderTodos();
 loadDynamicContent();
+updateStreak();
+renderActivityGrid();
+
+// Preset buttons click listeners
+document.querySelectorAll('.preset-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+        applyPreset(btn.dataset.preset);
+    });
+});
