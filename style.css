@@ -1,12 +1,13 @@
 :root {
-    --bg-primary: #2b2721;      /* Cozy warm coffee background */
-    --card-bg: #37322a;         /* Lighter warm latte cards */
-    --border-color: #494238;    /* Subtle warm bronze border */
-    --text-primary: #f6f2e8;     /* Brighter soft warm cream text */
-    --text-secondary: #c0b7a8;   /* Lighter muted warm text */
-    --accent-gold: #d8b26c;      /* Brighter warm gold */
-    --accent-gold-hover: #ead098;/* Lighter gold on hover */
-    --accent-silver: #968e80;
+    --bg-primary: #0e0d16;      /* Mystic cosmos background */
+    --card-bg: rgba(22, 20, 36, 0.65); /* Semi-transparent amethyst glass */
+    --border-color: rgba(182, 108, 216, 0.15); /* Subtle glowing violet border */
+    --border-hover: rgba(182, 108, 216, 0.45); /* Glowing violet border hover */
+    --text-primary: #f5efff;     /* Glowing soft white text */
+    --text-secondary: #b3aabf;   /* Muted warm lavender text */
+    --accent-gold: #ffd075;      /* Glowing cosmic gold */
+    --accent-gold-hover: #ffe2a3;/* Lighter star gold on hover */
+    --accent-silver: #8f8ba8;
     --radius-lg: 16px;
     --radius-md: 8px;
     --font-sans: 'Inter', sans-serif;
@@ -30,6 +31,10 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    background-image: 
+        radial-gradient(at 0% 0%, rgba(139, 92, 246, 0.16) 0px, transparent 40%),
+        radial-gradient(at 100% 100%, rgba(236, 72, 153, 0.12) 0px, transparent 40%),
+        radial-gradient(at 50% 50%, rgba(245, 158, 11, 0.04) 0px, transparent 50%);
 }
 
 /* ─── HEADER ─────────────────────────────────────────────────────────────── */
@@ -37,7 +42,9 @@ header {
     padding: 15px 20px;
     text-align: center;
     border-bottom: 1px solid var(--border-color);
-    background: #211f1a;
+    background: rgba(9, 8, 14, 0.85);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
 }
 
 .logo {
@@ -84,12 +91,15 @@ header {
     border-radius: var(--radius-lg);
     padding: 35px;
     margin-bottom: 30px;
-    box-shadow: 0 4px 20px rgba(28, 29, 33, 0.02);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
     transition: var(--transition);
 }
 
 .glass-card:hover {
-    border-color: rgba(158, 125, 40, 0.3);
+    border-color: var(--border-hover);
+    box-shadow: 0 10px 45px rgba(139, 92, 246, 0.08);
 }
 
 .section-title {
@@ -119,7 +129,7 @@ header {
     justify-content: center;
     gap: 10px;
     margin-bottom: 30px;
-    background: #322d25;
+    background: rgba(22, 20, 36, 0.5);
     border: 1px solid var(--border-color);
     padding: 6px;
     border-radius: 30px;
@@ -189,7 +199,7 @@ header {
 
 .control-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(158, 125, 40, 0.1);
+    box-shadow: 0 4px 12px rgba(139, 92, 246, 0.18);
 }
 
 .control-btn#start-btn:hover {
@@ -207,7 +217,7 @@ header {
     display: grid;
     grid-template-columns: 40px 1.2fr 2fr;
     align-items: center;
-    background: #322d25;
+    background: rgba(22, 20, 36, 0.45);
     padding: 15px 20px;
     border-radius: var(--radius-md);
     border: 1px solid var(--border-color);
@@ -215,9 +225,9 @@ header {
 }
 
 .sound-item:hover {
-    background: #40392f;
+    background: rgba(42, 38, 64, 0.85);
     border-color: var(--accent-gold);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 4px 15px rgba(139, 92, 246, 0.15);
 }
 
 /* Rain Active Color Palette */
@@ -378,7 +388,7 @@ header {
     -webkit-appearance: none;
     width: 100%;
     height: 4px;
-    background: #554d3f;
+    background: rgba(255, 255, 255, 0.12);
     outline: none;
     border-radius: 2px;
     transition: var(--transition);
@@ -457,7 +467,7 @@ header {
 
 #todo-input {
     flex-grow: 1;
-    background: #322d25;
+    background: rgba(22, 20, 36, 0.5);
     border: 1px solid var(--border-color);
     color: var(--text-primary);
     padding: 12px 16px;
@@ -469,7 +479,7 @@ header {
 
 #todo-input:focus {
     border-color: var(--accent-gold);
-    background: #40392f;
+    background: rgba(42, 38, 64, 0.8);
 }
 
 #add-todo-btn {
@@ -506,14 +516,14 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 12px 16px;
-    background: #322d25;
+    background: rgba(22, 20, 36, 0.45);
     border: 1px solid var(--border-color);
     border-radius: var(--radius-md);
     transition: var(--transition);
 }
 
 .todo-item:hover {
-    background: #40392f;
+    background: rgba(42, 38, 64, 0.8);
     border-color: var(--accent-gold);
 }
 
@@ -565,7 +575,7 @@ header {
     padding: 16px 0;
     background: transparent;
     border: none;
-    border-bottom: 1px solid #2d2a23;
+    border-bottom: 1px solid var(--border-color);
     text-decoration: none;
     transition: var(--transition);
 }
@@ -629,7 +639,7 @@ footer {
     border-top: 1px solid var(--border-color);
     color: var(--text-secondary);
     font-size: 0.78rem;
-    background: #211f1a;
+    background: rgba(9, 8, 14, 0.85);
 }
 
 .footer-container {
@@ -673,12 +683,15 @@ footer {
     border-radius: var(--radius-lg);
     padding: 20px;
     box-sizing: border-box;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
     transition: var(--transition);
 }
 
 .skyscraper-column:hover {
-    border-color: rgba(197, 160, 89, 0.3);
+    border-color: var(--border-hover);
+    box-shadow: 0 10px 45px rgba(139, 92, 246, 0.08);
 }
 
 .skyscraper-title {
@@ -712,7 +725,7 @@ footer {
     flex-direction: column;
     gap: 8px;
     padding: 10px;
-    background: rgba(255, 255, 255, 0.01);
+    background: rgba(22, 20, 36, 0.4);
     border: 1px solid var(--border-color);
     border-radius: var(--radius-md);
     text-decoration: none;
@@ -721,7 +734,7 @@ footer {
 
 .skyscraper-item:hover {
     border-color: var(--accent-gold);
-    background: #40392f;
+    background: rgba(42, 38, 64, 0.85);
     transform: translateY(-2px);
 }
 
