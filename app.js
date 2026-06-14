@@ -80,6 +80,22 @@ resetBtn.addEventListener('click', resetTimer);
 // ─── AMBIENT SOUND CONTROLLER ─────────────────────────────────────────────
 const soundItems = document.querySelectorAll('.sound-item');
 
+function stopAllExcept(currentItem) {
+    soundItems.forEach(item => {
+        if (item !== currentItem) {
+            const audio = item.querySelector('audio');
+            const slider = item.querySelector('.volume-slider');
+            const playIcon = item.querySelector('.sound-play-btn i');
+            
+            audio.pause();
+            item.classList.remove('active');
+            playIcon.className = 'fa-solid fa-play';
+            slider.value = 0;
+            audio.volume = 0;
+        }
+    });
+}
+
 soundItems.forEach(item => {
     const slider = item.querySelector('.volume-slider');
     const audio = item.querySelector('audio');
@@ -88,6 +104,7 @@ soundItems.forEach(item => {
     
     playBtn.addEventListener('click', () => {
         if (audio.paused) {
+            stopAllExcept(item);
             // Start at a standard 50% volume if it was at 0
             if (slider.value == 0) {
                 slider.value = 50;
@@ -109,6 +126,7 @@ soundItems.forEach(item => {
         audio.volume = volume;
         
         if (volume > 0) {
+            stopAllExcept(item);
             item.classList.add('active');
             playIcon.className = 'fa-solid fa-pause';
             if (audio.paused) {

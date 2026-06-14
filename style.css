@@ -227,12 +227,14 @@ header {
     box-shadow: 0 4px 20px rgba(84, 160, 255, 0.25);
     color: #ffffff;
 }
-.sound-item[data-sound="rain"].active .sound-icon,
-.sound-item[data-sound="rain"].active .sound-play-btn {
+.sound-item[data-sound="rain"].active .sound-icon {
     color: #54a0ff;
 }
 .sound-item[data-sound="rain"].active .sound-play-btn {
+    background: #54a0ff;
+    color: #0d1b2a;
     border-color: #54a0ff;
+    box-shadow: 0 0 12px rgba(84, 160, 255, 0.5);
 }
 .sound-item[data-sound="rain"].active .volume-slider::-webkit-slider-thumb {
     background: #54a0ff;
@@ -245,12 +247,14 @@ header {
     box-shadow: 0 4px 20px rgba(243, 161, 82, 0.25);
     color: #ffffff;
 }
-.sound-item[data-sound="cafe"].active .sound-icon,
-.sound-item[data-sound="cafe"].active .sound-play-btn {
+.sound-item[data-sound="cafe"].active .sound-icon {
     color: #f3a152;
 }
 .sound-item[data-sound="cafe"].active .sound-play-btn {
+    background: #f3a152;
+    color: #2e1d11;
     border-color: #f3a152;
+    box-shadow: 0 0 12px rgba(243, 161, 82, 0.5);
 }
 .sound-item[data-sound="cafe"].active .volume-slider::-webkit-slider-thumb {
     background: #f3a152;
@@ -263,12 +267,14 @@ header {
     box-shadow: 0 4px 20px rgba(38, 208, 206, 0.25);
     color: #ffffff;
 }
-.sound-item[data-sound="waves"].active .sound-icon,
-.sound-item[data-sound="waves"].active .sound-play-btn {
+.sound-item[data-sound="waves"].active .sound-icon {
     color: #26d0ce;
 }
 .sound-item[data-sound="waves"].active .sound-play-btn {
+    background: #26d0ce;
+    color: #0a2533;
     border-color: #26d0ce;
+    box-shadow: 0 0 12px rgba(38, 208, 206, 0.5);
 }
 .sound-item[data-sound="waves"].active .volume-slider::-webkit-slider-thumb {
     background: #26d0ce;
@@ -281,37 +287,77 @@ header {
     box-shadow: 0 4px 20px rgba(255, 159, 243, 0.25);
     color: #ffffff;
 }
-.sound-item[data-sound="lofi"].active .sound-icon,
-.sound-item[data-sound="lofi"].active .sound-play-btn {
+.sound-item[data-sound="lofi"].active .sound-icon {
     color: #ff9ff3;
 }
 .sound-item[data-sound="lofi"].active .sound-play-btn {
+    background: #ff9ff3;
+    color: #240046;
     border-color: #ff9ff3;
+    box-shadow: 0 0 12px rgba(255, 159, 243, 0.5);
 }
 .sound-item[data-sound="lofi"].active .volume-slider::-webkit-slider-thumb {
     background: #ff9ff3;
 }
 
+/* Default themed colors for play buttons */
+.sound-item[data-sound="rain"] .sound-play-btn {
+    border-color: #54a0ff;
+    color: #54a0ff;
+    background: rgba(84, 160, 255, 0.08);
+}
+.sound-item[data-sound="rain"] .sound-play-btn:hover {
+    background: rgba(84, 160, 255, 0.18);
+    box-shadow: 0 0 8px rgba(84, 160, 255, 0.35);
+}
+
+.sound-item[data-sound="cafe"] .sound-play-btn {
+    border-color: #f3a152;
+    color: #f3a152;
+    background: rgba(243, 161, 82, 0.08);
+}
+.sound-item[data-sound="cafe"] .sound-play-btn:hover {
+    background: rgba(243, 161, 82, 0.18);
+    box-shadow: 0 0 8px rgba(243, 161, 82, 0.35);
+}
+
+.sound-item[data-sound="waves"] .sound-play-btn {
+    border-color: #26d0ce;
+    color: #26d0ce;
+    background: rgba(38, 208, 206, 0.08);
+}
+.sound-item[data-sound="waves"] .sound-play-btn:hover {
+    background: rgba(38, 208, 206, 0.18);
+    box-shadow: 0 0 8px rgba(38, 208, 206, 0.35);
+}
+
+.sound-item[data-sound="lofi"] .sound-play-btn {
+    border-color: #ff9ff3;
+    color: #ff9ff3;
+    background: rgba(255, 159, 243, 0.08);
+}
+.sound-item[data-sound="lofi"] .sound-play-btn:hover {
+    background: rgba(255, 159, 243, 0.18);
+    box-shadow: 0 0 8px rgba(255, 159, 243, 0.35);
+}
+
 .sound-play-btn {
     background: transparent;
-    border: 1px solid var(--border-color);
+    border: 2px solid var(--border-color);
     color: var(--text-secondary);
-    width: 30px;
-    height: 30px;
+    width: 34px;
+    height: 34px;
     border-radius: 50%;
     cursor: pointer;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    font-size: 0.75rem;
+    font-size: 0.85rem;
     transition: var(--transition);
     padding: 0;
 }
 
 .sound-play-btn:hover {
-    border-color: var(--accent-gold);
-    color: var(--accent-gold);
-    background: rgba(216, 178, 108, 0.05);
     transform: scale(1.1);
 }
 
