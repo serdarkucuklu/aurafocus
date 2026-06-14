@@ -224,7 +224,7 @@ const fallbackProducts = [
     {
         title: "Hızlı Kablosuz Şarj Standı (3'ü 1 Arada)",
         price: "549 TL",
-        image_url: "https://images.unsplash.com/photo-1622445262465-24819af5232e?w=150",
+        image_url: "https://images.unsplash.com/photo-1628149455678-16f37bc392f4?w=150",
         affiliate_link: "https://www.amazon.com.tr/s?k=kablosuz+sarj+standi&tag=aurafocus-21"
     },
     {
